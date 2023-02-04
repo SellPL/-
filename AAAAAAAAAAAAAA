@@ -1,0 +1,34 @@
+#include <vector>
+#include <iostream>
+//#include <cstdlib>
+#include <windows.h>
+using namespace std;
+
+int main() {
+    int stroke_counter = 0;
+    vector<string> snow(36, " ");
+    
+    while (true) {
+        int siz = snow.size();
+        int cell = rand() % siz;
+        snow[cell] = "*";
+
+        Sleep(50);
+
+        for (auto i : snow) {
+            cout << i;
+        }
+        cout << endl;
+        
+        stroke_counter++;
+
+        while (stroke_counter == 28) {
+            system("cls");
+            stroke_counter = 0;
+        }
+
+        for (int i = 0; i < siz; i++) {
+            snow[i] = " ";
+        }
+    }
+}
