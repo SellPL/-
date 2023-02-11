@@ -19,7 +19,7 @@ int main(){
     }
 
     map<int, int>::iterator it;
-    while (j != 3){
+    while (true){
         cout << "Go ahead! type 0 to check for a house and people; type 1  to delete a key; type 2 to add a new house and 3 to stop! ";
         cin >> j;
         cout << endl;
@@ -27,7 +27,9 @@ int main(){
             cout << "What house are we looking for? ";
             cin >> L;
             it = houses.find(L);
-             
+            if (it != houses.end()){
+                cout << *it << " people live in this house" << endl;
+            }
         }
         if (j=1){
             cout << "What house should we abandon? ";
@@ -41,6 +43,9 @@ int main(){
             cout << ' ';
             cin >> num;
             houses.insert(make_pair(L, num));
+        }
+        if (j==3){
+            break;
         }
     }
 }
