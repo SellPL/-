@@ -28,7 +28,7 @@ int main(){
             cin >> L;
             it = houses.find(L);
             if (it != houses.end()){
-                cout << *it << " people live in this house" << endl;
+                cout << it->second << " people live in this house" << endl;
             }
         }
         if (j=1){
