@@ -23,7 +23,7 @@ int main(){
         cout << "Go ahead! type 0 to check for a house and people; type 1  to delete a key; type 2 to add a new house and 3 to stop! ";
         cin >> j;
         cout << endl;
-        if (j=0){
+        if (j == 0){
             cout << "What house are we looking for? ";
             cin >> L;
             it = houses.find(L);
@@ -31,20 +31,20 @@ int main(){
                 cout << it->second << " people live in this house" << endl;
             }
         }
-        if (j=1){
+        else if (j == 1){
             cout << "What house should we abandon? ";
             cin >> L;
             cout << endl;
             houses.erase(L);
         }
-        if (j=2){
-            cout << "Type two numbers in this order: house:people ";
+        else if (j == 2){
+            cout << "Type two numbers in this order: 1. house 2. people ";
             cin >> L;
             cout << ' ';
             cin >> num;
             houses.insert(make_pair(L, num));
         }
-        if (j==3){
+        else if (j == 3){
             break;
         }
     }
